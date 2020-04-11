@@ -7,7 +7,9 @@ public class Interface {
     public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     //static - это значит, что такая переменная одна для всех объектов
     public static String answer = null;
+
     public static void main(String[] args) throws IOException {
+        getTests();
         do {
             String expression = "";
             System.out.println(alert.INTRODUCTION.name);
@@ -28,10 +30,15 @@ public class Interface {
             }
         } while (!answer.equals("exit"));
     }
+
+    private static void getTests(){
+        SolutionTest.test1("x1x2x3&x2x4x5&x1x5&x1x2");
+    }
+
     //Это твои енумы
     enum alert{
         INTRODUCTION("Вводите выражение до следующего xor'a(Пример: x1x2x3) или же нажмите 0 для окончания записи. Для выхода из программы введите - exit");
-        private String name;
+        private final String name;
         alert(String name){
             this.name = name;
         }

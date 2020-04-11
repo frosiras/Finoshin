@@ -11,9 +11,13 @@ public class Solution {
         System.out.println(expression);//Это чтобы видеть, как изначально выглядит наше выражение. Когда надо будет, то закомментим
         fillMatrix();
     }
-    public void fillMatrix(){
+    //Надо заполнить list
+    public void fillMatrix(){ // еще не окончена
         // Функция split делит строку на мн-во строк. Регулярное выражение здесь "&".
         List tempList = Arrays.asList(this.expression.split("&"));
         System.out.println(tempList);
+    }
+    public String getExpression(){
+        return this.expression;
     }
 }
